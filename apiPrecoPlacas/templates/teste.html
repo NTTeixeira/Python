@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Placas de Vídeo</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styleee.css') }}">
+
+    <!-- CSS3 Icons-->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<body>
+
+<!-- NavBar-->
+<div class="container">
+    <header>
+        <nav>
+            <div class="nav-container">
+                <a href="index.html" id="logo">
+                    <span style="color: #ffc107;">Patron's</span>Vape</a>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="conta.html">Conta</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+                <form class="search">
+                    <input type="text" placeholder="Search">
+                    <button>Search</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+</div>
+
+<!-- Content/ Posts and filter-->
+<!-- filter -->
+<div class="content">
+    <article class="nav-content">
+        <div class="filter">
+            <aside>
+                <label class="box" for="NvidiaRTX2060"> Nvidia RTX2060
+                    <input type="checkbox" class="checkbox" id="NvidiaRTX2060" onClick="valor()" name="RTX"
+                           value="Nvidia RTX2060">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="box" for="NvidiaRTX3060"> Nvidia RTX3060
+                    <input type="checkbox" class="checkbox" id="NvidiaRTX3060" onClick="valor()" name="RTX"
+                           value="Nvidia RTX3060">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="box" for="NvidiaRTX3070"> Nvidia RTX3070
+                    <input type="checkbox" class="checkbox" id="NvidiaRTX3070" onClick="valor()" name="RTX"
+                           value="Nvidia RTX3070">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="box" for="NvidiaRTX3080"> Nvidia RTX3080
+                    <input type="checkbox" class="checkbox" id="NvidiaRTX3080" onClick="valor()" name="RTX"
+                           value="Nvidia RTX3080">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="box" for="NvidiaRTX3090"> Nvidia RTX3090
+                    <input type="checkbox" class="checkbox" id="NvidiaRTX3090" onClick="valor()" name="RTX"
+                           value="Nvidia RTX3090">
+                    <span class="checkmark"></span>
+                </label>
+                <div>
+                    <input class="btnSelecionar" type="submit" value="Selecionar" id="send">
+                </div>
+            </aside>
+        </div>
+
+        <!-- Posts-->
+        <section>
+
+        </section>
+    </article>
+</div>
+
+<!-- Footer-->
+<footer>
+    &copy; Patron's Vape - 2021. Todos seus direitos reservados.
+</footer>
+
+<!-- Fixed here-->
+<script>
+		var slideIndex = [1,1,1];
+		var slideId = ["mySlides1", "mySlides2", "mySlides3"]
+		showSlides(1, 0);
+		showSlides(1, 1);
+		showSlides(1, 2);
+
+		function plusSlides(n, no) {
+		  showSlides(slideIndex[no] += n, no);
+		}
+
+		function showSlides(n, no) {
+		  var i;
+		  var x = document.getElementsByClassName(slideId[no]);
+		  if (n > x.length) {slideIndex[no] = 1}
+		  if (n < 1) {slideIndex[no] = x.length}
+		  for (i = 0; i < x.length; i++) {
+		     x[i].style.display = "none";
+		  }
+		  x[slideIndex[no]-1].style.display = "block";
+		}
+
+</script>
+
+</body>
+</html>
