@@ -1,6 +1,6 @@
 from flask import render_template
-from app import app
-from app.models.forms import CadastroForm, AlterarForm, ExcluirForm
+from FlaskApplication import app
+from FlaskApplication.models.forms import CadastroForm, AlterarForm, ExcluirForm
 import sqlite3
 from sqlite3 import Error
 
@@ -24,7 +24,7 @@ def cadastrar():
             registro = (descricao, precocompra, precovenda, datacriacao)
             print(registro)
             try:
-                conn = sqlite3.connect('C:\SQLite\exAPI04.db')
+                conn = sqlite3.connect('database\produtos.db')
                 sql = ''' INSERT INTO produtos(descricao, precocompra,
                                 precovenda, datacriacao)
                                 VALUES(?,?,?,?) '''
@@ -53,7 +53,7 @@ def alterar():
             registro = (descricao, precocompra, precovenda, datacriacao)
             print(f"{registro}, {id}")
             try:
-                conn = sqlite3.connect('C:\SQLite\exAPI04.db')
+                conn = sqlite3.connect('database\produtos.db')
                 sql = ''' UPDATE produtos SET descricao = ?, precocompra = ?,precovenda = ?, datacriacao = ? WHERE idproduto = ''' + str(
                     id)
                 cur = conn.cursor()
@@ -77,7 +77,7 @@ def excluir():
         print(registro)
         print(idproduto)
         try:
-            conn = sqlite3.connect('C:\SQLite\exAPI04.db')
+            conn = sqlite3.connect('database\produtos.db')
             sql = '''DELETE FROM produtos WHERE idproduto = ''' + str(registro)
 
             cur = conn.cursor()
@@ -94,7 +94,7 @@ def excluir():
 @app.route('/listar', methods=['GET'])
 def listar():
     try:
-        conn = sqlite3.connect('C:\SQLite\exAPI04.db')
+        conn = sqlite3.connect('database\produtos.db')
         sql = '''SELECT * FROM produtos'''
         cur = conn.cursor()
         cur.execute(sql)
