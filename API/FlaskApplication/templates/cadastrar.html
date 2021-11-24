@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pr-BR">
+<head>
+    <title>Cadastro</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+    <header>
+        <nav>
+            <div class="nav-container">
+                <a href="{{url_for('index')}}" id="logo">
+                    <span style="color: #ffc107;">Pagina</span>Inicial</a>
+                <ul>
+                    <li><a href="{{url_for('cadastrar')}}">Cadastrar</a></li>
+                    <li><a href="{{url_for('alterar')}}">Alterar</a></li>
+                    <li><a href="{{url_for('excluir')}}">Excluir</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+</div>
+<div class="nav-register">
+    <div>
+        <h2 class="info-texto">Tela de Cadastro</h2>
+    </div>
+    <form method="POST" class="nav-register-form" action="{{ url_for('cadastrar') }}">
+        {{ form.csrf_token }}
+        <div>
+            {{ form.descricao(class="nav-register-data", placeholder="Descrição") }}
+        </div>
+        <div>
+            {{ form.precocompra(class="nav-register-data", placeholder="Preço de compra") }}
+        </div>
+        <div>
+            {{ form.precovenda(class="nav-register-data", placeholder="Preço de venda") }}
+        </div>
+        <div>
+            {{ form.datacriacao(class="nav-register-data", placeholder="Data criação") }}
+        </div>
+        <hr style="margin-top: 20px;">
+        <input type="submit" value="Submit" class="nav-register-button">
+    </form>
+</div>
+
+<footer>
+    <p>&copy; 2020 - Nathan Siman</p>
+</footer>
+
+</body>
+</html>
+
+<!--<div class="nav-register">
+            <form class="nav-register-form" action="/cadastrar" method="POST">
+              <input class="nav-register-data" name="descricao" type="text" placeholder="Descrição"></input>
+              <input class="nav-register-data" name="precocompra" type="text" placeholder="Preço compra"></input>
+              <input class="nav-register-data" name="precovenda" type="text" placeholder="Preço venda"></input>
+              <input class="nav-register-data" name="datacricao" type="text" placeholder="Data criação"></input>
+              <button type="submit" value="Submit" name="form">Registrar</button>
+            </form>
+          </div>*/
+->

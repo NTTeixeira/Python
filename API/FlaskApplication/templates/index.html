@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pr-BR">
+<head>
+    <title>Pagina Inicial</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<!-- NavBar-->
+<div class="container">
+    <header>
+        <nav>
+            <div class="nav-container">
+                <a href="{{url_for('index')}}" id="logo">
+                    <span style="color: #ffc107;">Pagina</span>Inicial</a>
+                <ul>
+                    <li><a href="{{url_for('cadastrar')}}">Cadastrar</a></li>
+                    <li><a href="{{url_for('alterar')}}">Alterar</a></li>
+                    <li><a href="{{url_for('excluir')}}">Excluir</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+</div>
+
+<footer>
+    <p>&copy; 2020 - Nathan Siman</p>
+</footer>
+
+</body>
+</html>

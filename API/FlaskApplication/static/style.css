@@ -1,0 +1,142 @@
+/* Tag's*/
+* {box-sizing: border-box}
+
+body{
+  margin: 0;
+  background: #2E2E2E;
+  font-family: Verdana, sans-serif;
+}
+
+header{
+  position: relative;
+  top: 0;
+  height: auto;
+  width: 100%;
+}
+
+nav{
+  position: fixed;
+  top: 0;
+  height: 55px;
+  width: 100%;
+  background: #212529;
+  border-bottom: 1px solid #ffc107;
+}
+
+
+footer{
+  height: 55px;
+  width: 100%;
+  background: #212529;
+  color: white;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  padding-top: 15px;
+  margin-top: 15px;
+
+}
+
+/* Class */
+
+.container{
+  max-width: 1920px;
+  width: 100%;
+}
+
+.nav-container{
+  max-width: 1280px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  height: 55px;
+  padding-left: 30px;
+}
+
+.nav-container ul{
+  padding-left: 150px;
+  height: 55px;
+  line-height: 50px;
+  float: left;
+  margin: 0;
+}
+
+.nav-container li{
+  float: left;
+  margin: 0px 10px;
+  list-style: none;
+}
+
+.nav-container li a{
+  text-decoration: none;
+  color: #ffc107;
+}
+
+.nav-container li a:hover{
+  text-decoration: none;
+  color: #ffc107;
+  background: gray;
+  height: 200px;
+  width: 200px;
+}
+
+#logo{
+  font-size: 20px;
+  line-height: 50px;
+  color: white;
+  float: left;
+  text-decoration: none;
+}
+
+/* Register*/
+.info-texto{
+  padding-right: 10px;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+}
+
+.nav-register{
+  width: 570px;
+  height: 450px;
+  margin-left: 400px;
+  padding-top: 30px;
+  top: 100px;
+  position: relative;
+  background: #212529;
+  border-radius: 5px;
+}
+
+.nav-register-form{
+  width: 350px;
+  margin: auto;
+}
+
+.nav-register-data{
+  width: 350px;
+  height: 40px;
+  border-radius: 5px;
+  padding: 15px;
+  margin-top: 10px;
+  font-size: 16px;
+  outline: none;
+  border: none;
+}
+
+.nav-register-button{
+  width: 350px;
+  height: 40px;
+  border-radius: 5px;
+  margin-top: 10px;
+  background: #198754;
+  border: none;
+  color: white;
+  outline: none;
+}
+
+.nav-register button:hover {
+  background-color: #157347;
+  border-color: #146c43;
+}
+
+
