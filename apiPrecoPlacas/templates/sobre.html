@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Placas de Vídeo</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- CSS3 Icons-->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<body>
+<!-- NavBar-->
+<div class="container">
+    <header>
+        <nav>
+            <div class="nav-container">
+                <aside>
+                    <div>
+                        <button class="dropdown dropbtn">Início</button>
+                    </div>
+                    <div class="dropdown-placa">
+                        <button class="dropdown dropbtn"> Placas <i class="fa fa-caret-down"></i>
+                            <div class="dropdown-content">
+                                <a href="{{url_for('todas')}}">Todas</a>
+                                <a href="{{url_for('amd')}}">Amd</a>
+                                <a href="{{url_for('nvidia')}}">Nvidia</a>
+                            </div>
+                        </button>
+                    </div>
+                    <div>
+                        <button class="dropdown dropbtn"> <a href="{{url_for('nvidia')}}">Sobre</a></button>
+                    </div>
+                    <div>
+                        <button class="dropdown dropbtn"> Contato</button>
+                    </div>
+                </aside>
+            </div>
+        </nav>
+    </header>
+</div>
+<!-- Content/ Graphic and filter-->
+<div class="content-bg">
+    <article class="nav-content-bg">
+        <!-- filter -->
+        <!-- Graphic Google Chart -->
+        <section>
+            <a id="logo1">Placa de Vídeo</a>
+        </section>
+    </article>
+</div>
+<!-- Footer-->
+<footer>
+    &copy; Copyright Placa de Vídeo - 2021. Todos seus direitos reservados.
+</footer>
+</body>
+
+</html>

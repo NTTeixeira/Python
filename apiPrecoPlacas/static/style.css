@@ -1,0 +1,432 @@
+/* Tag's*/
+* {box-sizing: border-box}
+
+body{
+  margin: 0;
+  background: #E6E6E6;
+  font-family: Verdana, sans-serif;
+}
+
+header{
+  position: relative;
+  top: 0;
+  height: auto;
+  width: 100%;
+}
+
+nav{
+  position: fixed;
+  top: 0;
+  height: 55px;
+  width: 100%;
+  background: #f8f9fa;
+  border-bottom: 2px solid #198754;
+}
+
+footer{
+  height: 55px;
+  width: 100%;
+  background: #f8f9fa;
+  color: #212529;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  padding-top: 15px;
+  margin-top: 10px;
+}
+
+/* Class */
+
+/* Navbar*/
+.container{
+  max-width: 1920px;
+  width: 100%;
+  position: absolute;
+  z-index: 10;
+}
+
+.nav-container{
+  max-width: 1280px;
+  margin-left: 90px;
+  margin-right: auto;
+}
+
+.nav-container aside{
+  float: left;
+  height: 60px;
+  line-height: 50px;
+  margin: 0;
+  padding-left: 85px;
+}
+
+.nav-container aside div{
+  float: left;
+  margin: 0px 25px;
+  list-style: none;
+}
+
+.nav-container aside div button{
+  margin-top: 5px;
+  height: 45px;
+  width: 120px;
+  float: left;
+  color: #198754;
+  background: #f8f9fa;
+  border-radius: 3px;
+  outline: none;
+  font-size: 18px;
+}
+
+.nav-container aside button:hover{
+  color: #212529;
+  background: #198754;
+}
+
+#logo{
+  font-size: 22px;
+  line-height: 50px;
+  color: #212529;
+  float: left;
+  text-decoration: none;
+}
+
+/*DropDown*/
+.dropbtn{
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-placa{
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content{
+  font-size: 16px;
+  display: none;
+  position: absolute;
+  bottom: -113px;
+  left: -25px;
+  width: 120px;
+  background-color: #f8f9fa;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  border-radius: 3px;
+}
+
+.dropdown-content a{
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  color: #212529;
+}
+
+.dropdown-content a:hover{
+  color: #198754;
+}
+
+.dropdown:hover .dropdown-content{
+  display: block;
+  outline: none;
+}
+
+/* Content*/
+.content{
+  max-width: 1920px;
+  max-height: 1080px;
+  margin-top: 65px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.nav-content{
+  min-width: 530px;
+  min-height: 600px;
+  max-width: 100%;
+  max-height 100%;
+  position: relative;
+  background: #f8f9fa;
+  border-radius: 5px;
+  padding: 10px;
+  z-index: 0;
+}
+
+.nav-content section{
+  display: flex;
+  max-width: 100%;
+  max-height: 100%;
+  min-width: 660px;
+  min-height: 540px;
+  margin-left: 30px;
+  background-size: cover;
+}
+
+/* Graphic*/
+.graphic{
+  display: flex;
+  min-width: 100%;
+  min-height: 100%;
+  border: 10px solid #f1f8e9;
+  border-radius: 5px;
+}
+
+.graphic-media{
+  float: right;
+  display: flex;
+  min-width: 100%;
+  min-height: 100%;
+  border: 10px solid #f1f8e9;
+  border-radius: 5px;
+}
+
+.graphic-fps{
+  display: flex;
+  max-width: 280px;
+  width: 100%;
+  max-height: 1080px;
+  height: 100%;
+  float: left;
+}
+
+.graphic-fps aside{
+  float: left;
+  width: 250px;
+  height: 540px;
+  background: #f1f8e9;
+  border-radius: 5px;
+  border: 2px solid #f1f8e9;
+  text-align: center;
+}
+
+/* Filter */
+.filter{
+  display: flex;
+  max-width: 180px;
+  width: 100%;
+  max-height: 1080px;
+  height: 100%;
+  float: left;
+  margin-right: 20px;
+}
+
+.filter aside{
+  float: left;
+  width: 180px;
+  height: 540px;
+  background: #f1f8e9;
+  border-radius: 5px;
+  padding: 10px 0 0 0;
+  border: 2px solid #198754;
+  text-align: center;
+}
+
+.texto-filtro{
+  color: #198754;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.box{
+  display: block;
+  position: relative;
+  margin-bottom: 15px;
+  cursor: pointer;
+  font-size: 15px;
+  color: #198754;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.box:hover{
+    color: #198754;
+}
+
+.box input{
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  margin-top: 1px;
+  margin-left: 10px;
+  position: absolute;
+  top 0;
+  left: 0;
+  height: 16px;
+  width: 16px;
+  background-color: #BDBDBD;
+}
+
+/* On mouse-over, add a grey background color */
+.box:hover input ~ .checkmark {
+  background-color: #A4A4A4;
+}
+
+/* When the checkbox is checked, add a blue background */
+.box input:checked ~ .checkmark {
+  background-color: #198754;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.box input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.box .checkmark:after {
+  left: 4px;
+  top: 0px;
+  width: 6px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.btnSelecionar{
+  color: #198754;
+  font-size: 15px;
+  height: 40px;
+  width: 160px;
+  margin-top: 10px;
+  border-radius: 2px;
+  outline: none;
+  border-style: none;
+  background: #f1f8e9;
+  border: 1px solid #198754;
+  cursor: pointer;
+}
+
+.btnSelecionar:hover{
+  color: #212529;
+  background: #198754;
+}
+
+/*Tela Inicial////////////////////////////////////////////////////////////////////////////////////*/
+.content-bg{
+  max-width: 1920px;
+  max-height: 580px;
+}
+
+.nav-content-bg{
+  max-width: 100%;
+  max-height 100%;
+  position: relative;
+  background: #198754;
+  padding: 10px;
+  z-index: 0;
+}
+
+.nav-content-bg section{
+  padding-top: 75px;
+  display: flex;
+  max-width: 100%;
+  max-height: 100%;
+  min-width: 1060px;
+  min-height: 150px;
+  background-size: cover;
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+#logo1{
+  font-family: Times New Roman, Cursive;
+  font-style: italic;
+  font-size: 34px;
+  line-height: 50px;
+  color: white;
+  float: left;
+  text-decoration: none;
+}
+
+.content-t1{
+  max-width: 1920px;
+  max-height: 580px;
+  margin-top: 25px;
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+.nav-content-t1{
+  min-width: 530px;
+  min-height: 350px;
+  max-width: 100%;
+  max-height 100%;
+  position: relative;
+  background: #f8f9fa;
+  border-radius: 5px;
+  padding: 10px;
+  z-index: 0;
+}
+
+.nav-content-t1 section{
+  display: flex;
+  max-width: 100%;
+  max-height: 100%;
+  min-width: 1060px;
+  min-height: 350px;
+}
+
+.graphic-ti{
+  display: flex;
+  min-width: 100%;
+  min-height: 100%;
+  border: 10px solid #f1f8e9;
+  border-radius: 5px;
+}
+
+.descricao{
+  font-family: Times New Roman, Cursive;
+  font-style: italic;
+  font-size: 18px;
+  padding: 20px 0 20px 5px;
+}
+
+/*Grafic teste///////////////////////////*/
+.content-t2{
+  max-width: 1920px;
+  max-height: 1080px;
+  margin-top: 65px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.nav-content-t2{
+  min-width: 530px;
+  min-height: 600px;
+  max-width: 100%;
+  max-height 100%;
+  position: relative;
+  background: #f8f9fa;
+  border-radius: 5px;
+  padding: 10px;
+  z-index: 0;
+}
+
+.nav-content-t2 section{
+  display: flex;
+  max-width: 100%;
+  max-height: 100%;
+  min-width: 1060px;
+  min-height: 540px;
+  margin-left: 30px;
+  background-size: cover;
+}
+
+
+
+

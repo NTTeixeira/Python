@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Placas de Vídeo</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- CSS3 Icons-->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<body>
+<!-- NavBar-->
+<div class="container">
+    <header>
+        <nav>
+            <div class="nav-container">
+                 <a href="{{url_for('index')}}" id="logo">
+                    <span style="color: #198754;">Placa d</span>e Vídeo</a>
+                <aside>
+                    <div>
+                        <button class="dropdown dropbtn">Início</button>
+                    </div>
+                    <div class="dropdown-placa">
+                        <button class="dropdown dropbtn"> Placas <i class="fa fa-caret-down"></i>
+                            <div class="dropdown-content">
+                                <a href="{{url_for('todas')}}">Todas</a>
+                                <a href="{{url_for('amd')}}">Amd</a>
+                                <a href="{{url_for('nvidia')}}">Nvidia</a>
+                            </div>
+                        </button>
+                    </div>
+                    <div>
+                        <button class="dropdown dropbtn">Sobre</button>
+                    </div>
+                    <div>
+                        <button class="dropdown dropbtn">Contato</button>
+                    </div>
+                </aside>
+            </div>
+        </nav>
+    </header>
+</div>
+<!-- Content/ Graphic and filter-->
+<div class="content-bg">
+    <article class="nav-content-bg">
+        <!-- filter -->
+        <!-- Graphic Google Chart -->
+        <section>
+            <a id="logo1">Placa de Vídeo</a>
+        </section>
+    </article>
+</div>
+<div class="content-t1">
+    <article class="nav-content-t1">
+        <div class="descricao">
+                Placa que teve a maior subida na última semana:
+        </div>
+        <!-- Graphic Google Chart -->
+        <section>
+            <div id="line_top_x" class="graphic-ti"></div>
+        </section>
+    </article>
+</div>
+<div class="content-t1">
+    <article class="nav-content-t1">
+        <div class="descricao">
+                Placa que teve a maior queda na última semana:
+        </div>
+        <!-- Graphic Google Chart -->
+        <section>
+            <div id="line_top_y" class="graphic-ti"></div>
+        </section>
+    </article>
+</div>
+<!-- Footer-->
+<footer>
+    &copy; Copyright Placa de Vídeo - 2021. Todos seus direitos reservados.
+</footer>
+</body>
+
+<!-- JS -->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    var matriz = [[],[],[],[],[],[],[],[],[]];
+    {% for row in results %}
+        {% if row[2] == 'Nvidia RTX 2060'%}
+            var adicionar = matriz[0].push({{ row[0] }});
+        {% endif %}
+        {% if row[2] == 'AMD Radeon RX 6900XT'%}
+            var adicionar = matriz[1].push({{ row[0] }});
+        {% endif %}
+    {% endfor %}
+    google.charts.load('current', {'packages':['corechart', 'line']});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var i = 0;
+          var data = new google.visualization.DataTable();
+          data.addColumn('date', 'Dia');
+          data.addColumn('number', 'Nvidia RTX2060');
+
+    {% for row in results %}
+       if( i < 60){
+        {% if row[2] == 'Nvidia RTX 2060'%}
+            data.addRows([[ new Date(2021, 8, 1 + i), matriz[0][i] ]]);
+        {% endif %}
+            i++;
+       };
+    {% endfor %}
+      var options = {
+            title: 'Variação do preço das placas de vídeo',
+            subtitle: 'Em reais (BRL)',
+          vAxis: {
+              scaleType: 'log',
+              title: 'Preço',
+              textStyle: {
+                color: 'black',
+                fontSize: 12,
+                bold: true
+              },
+              titleTextStyle: {
+                color: 'black',
+                fontSize: 16,
+                bold: true,
+              },
+            },
+          hAxis: {
+              format: 'd/M',
+              title: 'Dia',
+              textStyle: {
+                fontSize: 12,
+                color: 'black',
+              },
+            },
+          axes: {
+              x: {
+                20: {side: 'bottom'},
+              },
+            },
+          backgroundColor: '#f1f8e9',
+      };
+      var chart = new google.charts.Line(document.getElementById('line_top_x'));
+      chart.draw(data, google.charts.Line.convertOptions(options));
+    };
+    google.charts.load('current', {'packages':['corechart', 'line']});
+    google.charts.setOnLoadCallback(drawChart2);
+    function drawChart2() {
+      var i = 0;
+          var data = new google.visualization.DataTable();
+          data.addColumn('date', 'Dia');
+          data.addColumn('number', 'AMD Radeon RX 6900XT');
+
+    {% for row in results %}
+       if( i < 60){
+        {% if row[2] == 'Nvidia RTX 2060'%}
+            data.addRows([[ new Date(2021, 8, 1 + i), matriz[1][i] ]]);
+        {% endif %}
+            i++;
+       };
+    {% endfor %}
+      var options = {
+            title: 'Variação do preço das placas de vídeo',
+            subtitle: 'Em reais (BRL)',
+          vAxis: {
+              scaleType: 'log',
+              title: 'Preço',
+              textStyle: {
+                color: 'black',
+                fontSize: 12,
+                bold: true
+              },
+              titleTextStyle: {
+                color: 'black',
+                fontSize: 16,
+                bold: true,
+              },
+            },
+          hAxis: {
+              format: 'd/M',
+              title: 'Dia',
+              textStyle: {
+                fontSize: 12,
+                color: 'black',
+              },
+            },
+          axes: {
+              x: {
+                20: {side: 'bottom'},
+              },
+            },
+          backgroundColor: '#f1f8e9',
+      };
+      var chart = new google.charts.Line(document.getElementById('line_top_y'));
+      chart.draw(data, google.charts.Line.convertOptions(options));
+    };
+
+
+</script>
+</html>
